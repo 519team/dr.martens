@@ -1,0 +1,19 @@
+{%extends 'martens/base_martens.html'%}
+
+
+{%block content%}
+<h1 class="mb-4">Posts</h1>
+    {% for post in posts%}
+
+        <div class="card mb-5">
+            <div class="card-header">
+                {{post.date_pub}}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{post.title}}</h5>
+                <p class="card-text">{{post.pvw_text}}</p>
+                <a href="{% url 'post_detail_url' slug=post.slug %}" class="btn btn-light">Read</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
